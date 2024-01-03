@@ -144,3 +144,32 @@ module "ebbey132" {
 
   account_customizations_name = "Security-ebbey132"
 }
+
+
+module "ebbey+234" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "ebbeytt+234@amazon.com"
+    AccountName               = "ebbey+234"
+    ManagedOrganizationalUnit = "Custom"
+    SSOUserEmail              = "john.doe@amazon.com"
+    SSOUserFirstName          = "John"
+    SSOUserLastName           = "Doe"
+  }
+
+  account_tags = {
+    "Learn Tutorial" = "AFT"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "John Doe"
+    change_reason       = "new security account"
+  }
+
+  custom_fields = {
+    group = "security"
+  }
+
+  account_customizations_name = "Security-ebbey+234"
+}
