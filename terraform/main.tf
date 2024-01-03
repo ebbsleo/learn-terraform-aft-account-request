@@ -57,3 +57,32 @@ module "dc-aft29" {
 
   account_customizations_name = "security-ebbeytt+dc29@amazon.com"
 }
+
+
+module "exampleAccount" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "email@example.com"
+    AccountName               = "exampleAccount"
+    ManagedOrganizationalUnit = "exampleOU"
+    SSOUserEmail              = "user@example.com"
+    SSOUserFirstName          = "First"
+    SSOUserLastName           = "Last"
+  }
+
+  account_tags = {
+    "Learn Tutorial" = "AFT"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "UserID123"
+    change_reason       = "Creating initial account setup"
+  }
+
+  custom_fields = {
+    group = "development"
+  }
+
+  account_customizations_name = "BasicSecuritySetup-exampleAccount"
+}
