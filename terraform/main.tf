@@ -198,3 +198,28 @@ module "ebbeytt+123" {
 
   account_customizations_name = "Infrastructure-ebbeytt+123"
 }
+
+
+module "ebbeytt+342" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "ebbeytt+342@amazon.com"
+    AccountName               = "ebbeytt+342"
+    ManagedOrganizationalUnit = "Infrastructure"
+    SSOUserEmail              = "ebbeytt+342@amazon.com"
+    SSOUserFirstName          = "ebbey"
+    SSOUserLastName           = "Thomas"
+  }
+
+  account_tags = {
+    "Learn Tutorial" = "AFT"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "ebbeytt+342"
+    change_reason       = "New Infrastructure Account"
+  }
+
+  account_customizations_name = "Infrastructure-ebbeytt+342"
+}
