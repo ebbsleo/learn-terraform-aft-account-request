@@ -86,3 +86,32 @@ module "exampleAccount" {
 
   account_customizations_name = "BasicSecuritySetup-exampleAccount"
 }
+
+
+module "ebbey132" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "ebbeytt132@example.com"
+    AccountName               = "ebbey132"
+    ManagedOrganizationalUnit = "Sandbox"
+    SSOUserEmail              = "ebbeytt132@example.com"
+    SSOUserFirstName          = "Ebbey"
+    SSOUserLastName           = "Thomas"
+  }
+
+  account_tags = {
+    "Learn Tutorial" = "AFT"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "Ebbey Thomas"
+    change_reason       = "testing"
+  }
+
+  custom_fields = {
+    group = "Security"
+  }
+
+  account_customizations_name = "Security-ebbey132"
+}
