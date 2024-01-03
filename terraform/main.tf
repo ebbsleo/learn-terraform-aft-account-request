@@ -1,4 +1,4 @@
-module "ebbeytt+b234" {
+module "ebbeytt-b234" {
   source = "./modules/aft-account-request"
 
   control_tower_parameters = {
