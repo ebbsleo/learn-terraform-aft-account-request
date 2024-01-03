@@ -46,3 +46,28 @@ module "ebbeytt-test333" {
 
   account_customizations_name = "Security-ebbeytt-test333"
 }
+
+
+module "ebbeytt-bd650" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "ebbeytt+bd650@amazon.com"
+    AccountName               = "ebbeytt-bd650"
+    ManagedOrganizationalUnit = "Sandbox"
+    SSOUserEmail              = "ebbeytt+bd650@amazon.com"
+    SSOUserFirstName          = "Ebbey"
+    SSOUserLastName           = "Thomas"
+  }
+
+  account_tags = {
+    "Learn Tutorial" = "AFT"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "ebbeytt-bd650"
+    change_reason       = "New security account"
+  }
+
+  account_customizations_name = "Security-ebbeytt-bd650"
+}
