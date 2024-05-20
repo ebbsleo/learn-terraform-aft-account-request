@@ -121,3 +121,28 @@ module "ebbeytt+2a" {
 
   account_customizations_name = "Security-ebbeytt+2a"
 }
+
+
+module "ebbeytt+a4" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "ebbeytt+a4@amzon.com"
+    AccountName               = "ebbeytt+a4"
+    ManagedOrganizationalUnit = "Sandbox"
+    SSOUserEmail              = "ebbeytt+a4@amzon.com"
+    SSOUserFirstName          = "Ebbey"
+    SSOUserLastName           = "Thomas"
+  }
+
+  account_tags = {
+    "Learn Tutorial" = "AFT"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "Ebbey"
+    change_reason       = "AFT-update"
+  }
+
+  account_customizations_name = "Security-ebbeytt+a4"
+}
