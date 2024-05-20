@@ -96,3 +96,28 @@ module "ebbeytt+bedrocktest3324" {
 
   account_customizations_name = "security-ebbeytt+bedrocktest3324"
 }
+
+
+module "ebbeytt+2a" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "ebbeytt+2a@amazon.com"
+    AccountName               = "ebbeytt+2a"
+    ManagedOrganizationalUnit = "Sandbox"
+    SSOUserEmail              = "ebbeytt+2a@amazon.com"
+    SSOUserFirstName          = "Ebbey"
+    SSOUserLastName           = "Thomas"
+  }
+
+  account_tags = {
+    "Learn Tutorial" = "AFT"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "ebbeytt+2a"
+    change_reason       = "To host Amazon GuardDuty"
+  }
+
+  account_customizations_name = "Security-ebbeytt+2a"
+}
